@@ -1,0 +1,9 @@
+{
+  "name": "Stable Struts",
+  "description": "Reduce strut updates",
+  "uuid": "stablestruts@adlr.info",
+  "session-modes": ["user", "unlock-dialog"],
+  "shell-version": [
+    "48"
+  ]
+}
