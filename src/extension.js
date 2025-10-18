@@ -28,14 +28,14 @@ export default class PlainExampleExtension extends Extension {
         this._injectionManager.overrideMethod(Meta.Workspace.prototype, 'set_builtin_struts', originalMethod => {
             /* eslint-disable no-invalid-this */
             return function (...args) {
-                console.log("set_builtin_struts override called");
+                // console.log("set_builtin_struts override called");
                 const arr = args[0];
-                console.log(`  There are ${arr.length} struts:`);
+                // console.log(`  There are ${arr.length} struts:`);
                 let skip = false;
                 for (let i = 0; i < arr.length; i++) {
                     const strut = arr[i];
                     const rect = strut.rect;
-                    console.log(`  ${rect.x}, ${rect.y}, ${rect.width}, ${rect.height}`);
+                    // console.log(`  ${rect.x}, ${rect.y}, ${rect.width}, ${rect.height}`);
                     if (i === 0 && rect.x === 0 && rect.y === 0 && rect.height === 32) {
                         skip = true;
                     } else {
@@ -43,11 +43,11 @@ export default class PlainExampleExtension extends Extension {
                     }
                 }
                 if (skip) {
-                    console.log("  Skipping call to set_builtin_struts");
+                    // console.log("  Skipping call to set_builtin_struts");
                 } else {
                     originalMethod.call(this, ...args);
                 }
-                console.log("done with set_builtin_struts override");
+                // console.log("done with set_builtin_struts override");
             };
             /* eslint-enable */
         });
