@@ -5,6 +5,7 @@
   "session-modes": ["user", "unlock-dialog"],
   "shell-version": [
     "48",
-    "49"
+    "49",
+    "50"
   ]
 }
